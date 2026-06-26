@@ -1,0 +1,6 @@
+{
+  "name": "Zelix AI",
+  "description": "Central India's Best AI, Data Science & Generative AI Training Institute",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
