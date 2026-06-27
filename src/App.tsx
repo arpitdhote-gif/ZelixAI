@@ -4,7 +4,6 @@ import { Programs } from "./components/Programs";
 import { FutureOfAi } from "./components/FutureOfAi";
 import { ProjectShowcase } from "./components/ProjectShowcase";
 import { TechEcosystem } from "./components/TechEcosystem";
-import { Faculty } from "./components/Faculty";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { LogoIcon } from "./components/LogoIcon";
@@ -36,7 +35,6 @@ export default function App() {
     { label: "Programs", href: "#programs-section" },
     { label: "Projects", href: "#projects-section" },
     { label: "Ecosystem", href: "#ecosystem-section" },
-    { label: "Faculty", href: "#faculty-section" },
     { label: "Testimonials", href: "#testimonials-section" },
     { label: "Contact", href: "#contact-section" }
   ];
@@ -57,9 +55,6 @@ export default function App() {
               <span className="font-sans font-bold text-lg tracking-wider text-white uppercase group-hover:text-[#8AE600] transition-colors">
                 ZELIX AI
               </span>
-              <p className="text-[9px] font-mono font-semibold text-slate-400 tracking-widest uppercase -mt-1 block">
-                CENTRAL INDIA HQ
-              </p>
             </div>
           </a>
 
@@ -159,9 +154,6 @@ export default function App() {
 
         {/* Tech Ecosystem Section */}
         <TechEcosystem />
-
-        {/* Faculty Section */}
-        <Faculty onDirectConsultClick={(mentor) => handleEnrollRedirect(`Syllabus Q&A with ${mentor}`)} />
 
         {/* Testimonials Section */}
         <Testimonials />
