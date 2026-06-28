@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Hero } from "./components/Hero";
 import { Programs } from "./components/Programs";
 import { FutureOfAi } from "./components/FutureOfAi";
@@ -6,8 +6,11 @@ import { ProjectShowcase } from "./components/ProjectShowcase";
 import { TechEcosystem } from "./components/TechEcosystem";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
+import { FaqSection } from "./components/FaqSection";
+import { StructuredContent } from "./components/StructuredContent";
 import { LogoIcon } from "./components/LogoIcon";
 import { LeadCaptureModal } from "./components/LeadCaptureModal";
+import { KnowledgeBase } from "./components/KnowledgeBase";
 import { Bot, Menu, X, ArrowUpRight, Compass, HelpCircle, Briefcase, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -33,11 +36,67 @@ export default function App() {
   const navLinks = [
     { label: "What You Get", href: "#why-choose-us" },
     { label: "Programs", href: "#programs-section" },
+    { label: "Knowledge", href: "#knowledge-section" },
     { label: "Projects", href: "#projects-section" },
     { label: "Ecosystem", href: "#ecosystem-section" },
     { label: "Testimonials", href: "#testimonials-section" },
     { label: "Contact", href: "#contact-section" }
   ];
+
+  const sectionMeta = [
+    {
+      id: "hero-section",
+      title: "ZelixAI – AI Training Nagpur | Generative AI Course Nagpur | Corporate AI Training India",
+      description: "ZelixAI provides AI training, generative AI courses, AI agents development, data science programs, corporate AI upskilling, and AI consulting services from Nagpur, Maharashtra."
+    },
+    {
+      id: "why-choose-us",
+      title: "AI Training Nagpur | ZelixAI",
+      description: "ZelixAI delivers practical AI training in Nagpur with live projects, local campus support, and industry-ready consulting services."
+    },
+    {
+      id: "programs-section",
+      title: "AI Programs & Courses | ZelixAI Nagpur",
+      description: "Explore ZelixAI programs including Generative AI, AI Agents, Data Science and Machine Learning training for students and professionals in Central India."
+    },
+    {
+      id: "knowledge-section",
+      title: "AI Knowledge Base | ZelixAI",
+      description: "Read answer-engine optimized AI glossary, career guides, and Nagpur-focused resources from ZelixAI."
+    },
+    {
+      id: "faq-section",
+      title: "ZelixAI FAQs | AI Training Nagpur",
+      description: "Find answers on ZelixAI course structure, placement support, corporate training, and local AI upskilling in Nagpur."
+    },
+    {
+      id: "contact-section",
+      title: "Contact ZelixAI Nagpur | AI Consultancy India",
+      description: "Contact ZelixAI for AI training, corporate AI consulting, and data science programs in Nagpur, Maharashtra."
+    }
+  ];
+
+  useEffect(() => {
+    const updateMetadata = () => {
+      const offset = window.innerHeight * 0.25;
+      const activeSection = sectionMeta.find((section) => {
+        const el = document.getElementById(section.id);
+        if (!el) return false;
+        const rect = el.getBoundingClientRect();
+        return rect.top <= offset && rect.bottom > 0;
+      }) || sectionMeta[0];
+
+      document.title = activeSection.title;
+      const descriptionMeta = document.querySelector('meta[name="description"]');
+      if (descriptionMeta) {
+        descriptionMeta.setAttribute("content", activeSection.description);
+      }
+    };
+
+    updateMetadata();
+    window.addEventListener("scroll", updateMetadata, { passive: true });
+    return () => window.removeEventListener("scroll", updateMetadata);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#0F2B3C] text-white transition-colors duration-300 relative font-sans antialiased selection:bg-[#8AE600]/10 selection:text-[#8AE600]">
@@ -47,7 +106,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
           {/* Logo Brand */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a href="#hero-section" className="flex items-center gap-2.5 group" aria-label="Go to top of page">
             <div className="w-12 h-12 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
               <LogoIcon className="w-12 h-12" />
             </div>
@@ -143,11 +202,35 @@ export default function App() {
           }} 
         />
 
+        {/* Breadcrumb navigation for on-page structure */}
+        <div className="max-w-7xl mx-auto px-6 pt-6">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[11px] font-mono text-slate-400">
+            <a href="#hero-section" className="hover:text-[#8AE600]">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="#why-choose-us" className="hover:text-[#8AE600]">Why Choose Us</a>
+            <span aria-hidden="true">/</span>
+            <a href="#programs-section" className="hover:text-[#8AE600]">Programs</a>
+            <span aria-hidden="true">/</span>
+            <a href="#knowledge-section" className="hover:text-[#8AE600]">Knowledge Base</a>
+            <span aria-hidden="true">/</span>
+            <a href="#contact-section" className="hover:text-[#8AE600]">Contact</a>
+          </nav>
+        </div>
+
         {/* What You Get Section */}
         <FutureOfAi />
 
         {/* Programs Section */}
         <Programs onEnrollClick={handleEnrollRedirect} />
+
+        {/* Structured Content Section */}
+        <StructuredContent />
+
+        {/* Course FAQ Section */}
+        <FaqSection />
+
+        {/* Knowledge Base Section */}
+        <KnowledgeBase />
 
         {/* Project Showcase Section */}
         <ProjectShowcase />
