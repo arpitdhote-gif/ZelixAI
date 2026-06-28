@@ -82,7 +82,7 @@ export function Contact({ preselectedCourse }: ContactProps) {
           <div className="lg:col-span-5 space-y-8 text-left">
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-white">
-                Zelix AI Central HQ
+                Zelix AI
               </h3>
               <p className="text-xs text-slate-400 font-normal leading-relaxed">
                 Walk in to tour our state-of-the-art physical labs and discuss your technical pathway.
@@ -109,8 +109,8 @@ export function Contact({ preselectedCourse }: ContactProps) {
                 </div>
                 <div>
                   <p className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">General Inquiries</p>
-                  <a href="mailto:admission@zelixtech.ai" className="text-sm font-bold text-white hover:text-[#8AE600] transition-colors">
-                    admission@zelixtech.ai
+                  <a href="mailto:info@zelixai.in" className="text-sm font-bold text-white hover:text-[#8AE600] transition-colors">
+                    info@zelixai.in
                   </a>
                 </div>
               </div>

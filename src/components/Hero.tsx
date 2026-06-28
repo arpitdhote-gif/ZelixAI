@@ -41,7 +41,6 @@ export function Hero({ onConsultationClick, onExploreProgramsClick }: HeroProps)
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight text-center"
             >
-              AI Training Nagpur — <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AE600] to-teal-300">
                 Transform Your Career
               </span><br />

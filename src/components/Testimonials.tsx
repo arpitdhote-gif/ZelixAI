@@ -22,7 +22,7 @@ export function Testimonials() {
         </div>
 
         {/* Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {testimonials.map((test) => (
             <motion.div
               key={test.id}
@@ -30,7 +30,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="p-6 md:p-8 rounded-lg border border-white/5 bg-[#0D2534] flex flex-col justify-between shadow-md relative group hover:border-[#8AE600]/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-300"
+              className="p-4 md:p-5 border border-white/5 bg-[#0D2534] flex flex-col justify-between shadow-md relative group hover:border-[#8AE600]/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-300 aspect-[5/4]"
             >
               {/* Quote marks background */}
               <Quote className="absolute top-6 right-6 w-12 h-12 text-white/5 group-hover:text-[#8AE600]/5 pointer-events-none group-hover:scale-110 transition-transform" />

@@ -27,30 +27,37 @@ export function FaqSection() {
                 <h3 className="text-xl font-bold text-white">{course.title} FAQ</h3>
               </div>
 
-              <dl className="space-y-5 text-slate-300">
-                <div>
-                  <dt className="text-sm font-semibold text-white">
-                    What will I learn in the {course.title} course?
-                  </dt>
-                  <dd className="mt-3 text-sm leading-relaxed">
+              <div className="space-y-3 text-slate-300">
+                <details className="group rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <summary className="cursor-pointer list-none text-sm font-semibold text-white flex items-center justify-between gap-3">
+                    <span>What will I learn in the {course.title} course?</span>
+                    <span className="text-[#8AE600] transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed">
                     {course.description} This course covers core skills such as {course.skills.slice(0, 3).join(", ")}, making it ideal for practical AI training in Nagpur and India.
-                  </dd>
-                </div>
+                  </p>
+                </details>
 
-                <div>
-                  <dt className="text-sm font-semibold text-white">Who should join this Nagpur AI program?</dt>
-                  <dd className="mt-3 text-sm leading-relaxed">
+                <details className="group rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <summary className="cursor-pointer list-none text-sm font-semibold text-white flex items-center justify-between gap-3">
+                    <span>Who should join this Nagpur AI program?</span>
+                    <span className="text-[#8AE600] transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed">
                     Professionals, graduates, and business learners seeking AI training, corporate AI workshops, or AI consultancy skills will benefit most from this program.
-                  </dd>
-                </div>
+                  </p>
+                </details>
 
-                <div>
-                  <dt className="text-sm font-semibold text-white">What outcomes can I expect after completion?</dt>
-                  <dd className="mt-3 text-sm leading-relaxed">
+                <details className="group rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <summary className="cursor-pointer list-none text-sm font-semibold text-white flex items-center justify-between gap-3">
+                    <span>What outcomes can I expect after completion?</span>
+                    <span className="text-[#8AE600] transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed">
                     Graduates can expect outcomes like {course.outcomes.slice(0, 2).join(", ")}, plus increased confidence for AI roles, enterprise projects, and consultancy engagements.
-                  </dd>
-                </div>
-              </dl>
+                  </p>
+                </details>
+              </div>
             </article>
           ))}
         </div>

@@ -229,14 +229,14 @@ export default function App() {
         {/* Course FAQ Section */}
         <FaqSection />
 
-        {/* Knowledge Base Section */}
-        <KnowledgeBase />
+        {/* Tech Ecosystem Section */}
+        <TechEcosystem />
 
         {/* Project Showcase Section */}
         <ProjectShowcase />
 
-        {/* Tech Ecosystem Section */}
-        <TechEcosystem />
+        {/* Knowledge Base Section */}
+        <KnowledgeBase />
 
         {/* Testimonials Section */}
         <Testimonials />
@@ -257,7 +257,7 @@ export default function App() {
               <span className="font-sans font-bold text-base text-white tracking-wider uppercase">ZELIX AI</span>
             </div>
             <p className="text-xs text-slate-400 font-light leading-relaxed max-w-sm">
-              Central India's leading education and training ecosystem specializing in state-of-the-art Applied Intelligence, Machine Learning pipelines, and Agentic AI workflow automation models. Dharampeth Nagpur HQ.
+              Practical AI education and consultancy for students, professionals, startups, and organizations looking to build real-world AI skills and solutions.
             </p>
             <div className="text-[10px] font-mono text-slate-500">
               Approved corporate training provider &bull; Nagpur Tech Hub &bull; ISO 9001 Alignment
@@ -289,7 +289,7 @@ export default function App() {
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8AE600] shrink-0" />
-                <span>Email: info@zelixai.com</span>
+                <span>Email: info@zelixai.in</span>
               </li>
             </ul>
           </div>
