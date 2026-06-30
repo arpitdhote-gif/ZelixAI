@@ -9,12 +9,12 @@ interface HeroProps {
 
 export function Hero({ onConsultationClick, onExploreProgramsClick }: HeroProps) {
   return (
-    <section id="hero-section" className="relative pt-32 pb-20 md:pt-36 md:pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-[#0F2B3C] transition-colors duration-300">
+    <section id="hero-section" className="relative pt-32 pb-20 md:pt-36 md:pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-[#192153] transition-colors duration-300">
       {/* Background gradients */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#8AE600]/5 blur-3xl" />
-        <div className="absolute top-20 right-10 w-[500px] h-[500px] rounded-full bg-[#8AE600]/5 blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-[#8AE600]/5 blur-3xl" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#BA905E]/5 blur-3xl" />
+        <div className="absolute top-20 right-10 w-[500px] h-[500px] rounded-full bg-[#BA905E]/5 blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-[#BA905E]/5 blur-3xl" />
         {/* Abstract grid lines */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:20px_20px]" />
       </div>
@@ -27,9 +27,9 @@ export function Hero({ onConsultationClick, onExploreProgramsClick }: HeroProps)
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#8AE600]/10 border border-[#8AE600]/20 text-[#8AE600] font-mono text-[10px] font-bold uppercase tracking-widest shadow-sm"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#BA905E]/10 border border-[#BA905E]/20 text-[#BA905E] font-mono text-[10px] font-bold uppercase tracking-widest s[...]"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#8AE600] animate-spin" style={{ animationDuration: "3s" }} />
+            <Sparkles className="w-3.5 h-3.5 text-[#BA905E] animate-spin" style={{ animationDuration: "3s" }} />
             Central India's Premier AI Hub
           </motion.div>
 
@@ -41,7 +41,7 @@ export function Hero({ onConsultationClick, onExploreProgramsClick }: HeroProps)
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight text-center"
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AE600] to-teal-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA905E] to-[#D4A574]">
                 Transform Your Career
               </span><br />
               With Artificial Intelligence
@@ -67,7 +67,7 @@ export function Hero({ onConsultationClick, onExploreProgramsClick }: HeroProps)
             <button
               id="hero-enroll-btn"
               onClick={onExploreProgramsClick}
-              className="px-8 py-4 bg-[#8AE600] text-[#0F2B3C] font-bold uppercase text-xs tracking-wider rounded-md hover:bg-[#9cf01a] transition-all shadow-md hover:scale-[1.01] hover:shadow-[0_0_20px_rgba(138,230,0,0.4)] flex items-center justify-center gap-2 cursor-pointer group w-full sm:w-auto"
+              className="px-8 py-4 bg-[#BA905E] text-[#192153] font-bold uppercase text-xs tracking-wider rounded-md hover:bg-[#c9a370] transition-all shadow-md hover:scale-[1.01] hover:shadow-[0_[...]"
             >
               Explore Programs
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -75,9 +75,9 @@ export function Hero({ onConsultationClick, onExploreProgramsClick }: HeroProps)
             <button
               id="hero-consult-btn"
               onClick={onConsultationClick}
-              className="px-8 py-4 border border-white/10 rounded-md text-xs font-bold uppercase tracking-wider text-white hover:bg-white/5 bg-white/5 transition-all duration-300 hover:scale-[1.01] flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full sm:w-auto"
+              className="px-8 py-4 border border-white/10 rounded-md text-xs font-bold uppercase tracking-wider text-white hover:bg-white/5 bg-white/5 transition-all duration-300 hover:scale-[1.01[...]"
             >
-              <Bot className="w-4 h-4 text-[#8AE600] animate-bounce" />
+              <Bot className="w-4 h-4 text-[#BA905E] animate-bounce" />
               Book Consultation
             </button>
           </motion.div>
@@ -94,7 +94,7 @@ export function Hero({ onConsultationClick, onExploreProgramsClick }: HeroProps)
               <div className="text-[10px] uppercase tracking-widest text-slate-400 font-mono mt-1">Students Trained</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-extrabold text-[#8AE600]">10+</div>
+              <div className="text-3xl md:text-4xl font-extrabold text-[#BA905E]">10+</div>
               <div className="text-[10px] uppercase tracking-widest text-slate-400 font-mono mt-1">Live Projects</div>
             </div>
             <div>

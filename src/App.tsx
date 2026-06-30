@@ -47,7 +47,7 @@ export default function App() {
     {
       id: "hero-section",
       title: "ZelixAI – AI Training Nagpur | Generative AI Course Nagpur | Corporate AI Training India",
-      description: "ZelixAI provides AI training, generative AI courses, AI agents development, data science programs, corporate AI upskilling, and AI consulting services from Nagpur, Maharashtra."
+      description: "ZelixAI provides AI training, generative AI courses, AI agents development, data science programs, corporate AI upskilling, and AI consulting services from Nagpur, Maharashtra.[...]"
     },
     {
       id: "why-choose-us",
@@ -99,10 +99,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0F2B3C] text-white transition-colors duration-300 relative font-sans antialiased selection:bg-[#8AE600]/10 selection:text-[#8AE600]">
+    <div className="min-h-screen bg-[#192153] text-white transition-colors duration-300 relative font-sans antialiased selection:bg-[#BA905E]/10 selection:text-[#BA905E]">
       
       {/* Floating Premium Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0F2B3C]/90 backdrop-filter backdrop-blur-md transition-all duration-300">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#192153]/90 backdrop-filter backdrop-blur-md transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
           {/* Logo Brand */}
@@ -111,7 +111,7 @@ export default function App() {
               <LogoIcon className="w-12 h-12" />
             </div>
             <div className="text-left">
-              <span className="font-sans font-bold text-lg tracking-wider text-white uppercase group-hover:text-[#8AE600] transition-colors">
+              <span className="font-sans font-bold text-lg tracking-wider text-white uppercase group-hover:text-[#BA905E] transition-colors">
                 ZELIX AI
               </span>
             </div>
@@ -123,7 +123,7 @@ export default function App() {
               <a
                 key={idx}
                 href={link.href}
-                className="text-[11px] font-mono font-bold tracking-wider text-slate-300 hover:text-[#8AE600] transition-colors uppercase"
+                className="text-[11px] font-mono font-bold tracking-wider text-slate-300 hover:text-[#BA905E] transition-colors uppercase"
               >
                 {link.label}
               </a>
@@ -135,7 +135,7 @@ export default function App() {
             <button
               id="header-apply-cta"
               onClick={() => handleEnrollRedirect("")}
-              className="px-5 py-2.5 rounded-md font-mono font-bold text-xs tracking-wider uppercase text-[#0F2B3C] bg-[#8AE600] hover:bg-[#9cf01a] hover:scale-102 transition-all cursor-pointer flex items-center gap-1 shadow-md hover:shadow-[0_0_15px_rgba(138,230,0,0.3)]"
+              className="px-5 py-2.5 rounded-md font-mono font-bold text-xs tracking-wider uppercase text-[#192153] bg-[#BA905E] hover:bg-[#c9a370] hover:scale-102 transition-all cursor-pointer f[...]"
             >
               Apply Batch Spot
               <ChevronRight className="w-4 h-4" />
@@ -161,7 +161,7 @@ export default function App() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-white/10 bg-[#0F2B3C]/95 overflow-hidden"
+              className="lg:hidden border-t border-white/10 bg-[#192153]/95 overflow-hidden"
             >
               <div className="p-6 space-y-4 text-left">
                 {navLinks.map((link, idx) => (
@@ -169,7 +169,7 @@ export default function App() {
                     key={idx}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-xs font-mono font-bold text-slate-300 hover:text-[#8AE600] transition-colors uppercase py-2 border-b border-white/5"
+                    className="block text-xs font-mono font-bold text-slate-300 hover:text-[#BA905E] transition-colors uppercase py-2 border-b border-white/5"
                   >
                     {link.label}
                   </a>
@@ -180,7 +180,7 @@ export default function App() {
                     setMobileMenuOpen(false);
                     handleEnrollRedirect("");
                   }}
-                  className="w-full py-3.5 rounded-md text-center font-mono font-bold text-xs tracking-wider uppercase text-[#0F2B3C] bg-[#8AE600] hover:bg-[#9cf01a] cursor-pointer block"
+                  className="w-full py-3.5 rounded-md text-center font-mono font-bold text-xs tracking-wider uppercase text-[#192153] bg-[#BA905E] hover:bg-[#c9a370] cursor-pointer block"
                 >
                   Apply Batch Spot
                 </button>
@@ -205,15 +205,15 @@ export default function App() {
         {/* Breadcrumb navigation for on-page structure */}
         <div className="max-w-7xl mx-auto px-6 pt-6">
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[11px] font-mono text-slate-400">
-            <a href="#hero-section" className="hover:text-[#8AE600]">Home</a>
+            <a href="#hero-section" className="hover:text-[#BA905E]">Home</a>
             <span aria-hidden="true">/</span>
-            <a href="#why-choose-us" className="hover:text-[#8AE600]">Why Choose Us</a>
+            <a href="#why-choose-us" className="hover:text-[#BA905E]">Why Choose Us</a>
             <span aria-hidden="true">/</span>
-            <a href="#programs-section" className="hover:text-[#8AE600]">Programs</a>
+            <a href="#programs-section" className="hover:text-[#BA905E]">Programs</a>
             <span aria-hidden="true">/</span>
-            <a href="#knowledge-section" className="hover:text-[#8AE600]">Knowledge Base</a>
+            <a href="#knowledge-section" className="hover:text-[#BA905E]">Knowledge Base</a>
             <span aria-hidden="true">/</span>
-            <a href="#contact-section" className="hover:text-[#8AE600]">Contact</a>
+            <a href="#contact-section" className="hover:text-[#BA905E]">Contact</a>
           </nav>
         </div>
 
@@ -247,7 +247,7 @@ export default function App() {
       </main>
 
       {/* Premium Footer with detailed Sitemaps */}
-      <footer className="bg-[#0B1E2B] border-t border-white/5 text-slate-300 py-16 text-left relative z-10 transition-colors duration-300">
+      <footer className="bg-[#0F1B2E] border-t border-white/5 text-slate-300 py-16 text-left relative z-10 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10">
           
           {/* Brand Col */}
@@ -260,7 +260,7 @@ export default function App() {
               Practical AI education and consultancy for students, professionals, startups, and organizations looking to build real-world AI skills and solutions.
             </p>
             <div className="text-[10px] font-mono text-slate-500">
-              Approved corporate training provider &bull; Nagpur Tech Hub &bull; ISO 9001 Alignment
+              Approved corporate training provider • Nagpur Tech Hub • ISO 9001 Alignment
             </div>
           </div>
 
@@ -268,10 +268,10 @@ export default function App() {
           <div className="md:col-span-3 space-y-3">
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest">Elite Core Programs</h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#programs-section" className="hover:text-[#8AE600] transition-colors">Generative AI Specialization</a></li>
-              <li><a href="#programs-section" className="hover:text-[#8AE600] transition-colors">Agentic AI &amp; LLM Workflows</a></li>
-              <li><a href="#programs-section" className="hover:text-[#8AE600] transition-colors">Machine Learning</a></li>
-              <li><a href="#programs-section" className="hover:text-[#8AE600] transition-colors">Data Science &amp; Business BI</a></li>
+              <li><a href="#programs-section" className="hover:text-[#BA905E] transition-colors">Generative AI Specialization</a></li>
+              <li><a href="#programs-section" className="hover:text-[#BA905E] transition-colors">Agentic AI &amp; LLM Workflows</a></li>
+              <li><a href="#programs-section" className="hover:text-[#BA905E] transition-colors">Machine Learning</a></li>
+              <li><a href="#programs-section" className="hover:text-[#BA905E] transition-colors">Data Science &amp; Business BI</a></li>
             </ul>
           </div>
 
@@ -280,15 +280,15 @@ export default function App() {
             <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest">Campus Inquiries</h4>
             <ul className="space-y-2 text-xs font-light">
               <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8AE600] mt-1.5 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#BA905E] mt-1.5 shrink-0" />
                 <span>Nagpur: 1st floor, Plot no. 74, Somalvada Layout, Jai Prakash Nagar, Somalwada, Nagpur, Maharashtra 440025</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8AE600] shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#BA905E] shrink-0" />
                 <span>WhatsApp line: +91 98236 12171</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8AE600] shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#BA905E] shrink-0" />
                 <span>Email: info@zelixai.in</span>
               </li>
             </ul>
@@ -301,8 +301,8 @@ export default function App() {
             &copy; 2026 Zelix AI. All educational rights reserved.
           </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-[#8AE600] transition-colors">Terms of Operations</a>
-            <a href="#" className="hover:text-[#8AE600] transition-colors">Admissions Privacy</a>
+            <a href="#" className="hover:text-[#BA905E] transition-colors">Terms of Operations</a>
+            <a href="#" className="hover:text-[#BA905E] transition-colors">Admissions Privacy</a>
           </div>
         </div>
       </footer>

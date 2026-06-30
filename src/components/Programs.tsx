@@ -19,17 +19,17 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
     : courses.filter(c => c.category === selectedCategory);
 
   return (
-    <section id="programs-section" className="py-24 bg-[#0F2B3C] text-white transition-colors duration-300 relative border-t border-white/5">
+    <section id="programs-section" className="py-24 bg-[#192153] text-white transition-colors duration-300 relative border-t border-white/5">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-80 h-80 rounded-full bg-[#8AE600]/3 blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-80 h-80 rounded-full bg-[#8AE600]/3 blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-80 h-80 rounded-full bg-[#BA905E]/3 blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-80 h-80 rounded-full bg-[#BA905E]/3 blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-            Explore Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AE600] to-teal-300">Elite AI Programs</span>
+            Explore Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA905E] to-[#D4A574]">Elite AI Programs</span>
           </h2>
           <p className="text-slate-300 font-normal text-sm md:text-base leading-relaxed">
             All programs are strictly 2 months long, featuring intense practical instruction, real-world deployment, and continuous career support.
@@ -39,7 +39,7 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
         {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 mr-2">
-            <Filter className="w-3.5 h-3.5 text-[#8AE600]" />
+            <Filter className="w-3.5 h-3.5 text-[#BA905E]" />
             FILTER BY DOMAIN:
           </div>
           {categories.map((cat) => (
@@ -48,7 +48,7 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-md text-xs font-mono uppercase tracking-wider transition-all duration-300 cursor-pointer border ${
                 selectedCategory === cat
-                  ? "bg-[#8AE600] text-[#0F2B3C] border-[#8AE600] font-bold shadow-sm scale-102"
+                  ? "bg-[#BA905E] text-[#192153] border-[#BA905E] font-bold shadow-sm scale-102"
                   : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10 hover:text-white"
               }`}
             >
@@ -71,15 +71,15 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="rounded-lg border border-white/5 bg-[#0D2534] p-6 flex flex-col justify-between hover:border-[#8AE600]/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group relative overflow-hidden text-left"
+                className="rounded-lg border border-white/5 bg-[#0F1B2E] p-6 flex flex-col justify-between hover:border-[#BA905E]/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all durati[...]"
               >
                 {/* Accent line on top */}
-                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#8AE600]/0 via-[#8AE600]/50 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#BA905E]/0 via-[#BA905E]/50 to-[#D4A574]/0 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <div>
                   {/* Category & Badge */}
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-[#8AE600]/10 text-[#8AE600] border border-[#8AE600]/20">
+                    <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider uppercase bg-[#BA905E]/10 text-[#BA905E] border border-[#BA905E]/20">
                       {course.category}
                     </span>
                     <span className="text-xs font-mono font-medium text-slate-300 flex items-center gap-1">
@@ -89,7 +89,7 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold tracking-tight text-white mb-2 leading-snug group-hover:text-[#8AE600] transition-colors">
+                  <h3 className="text-lg font-bold tracking-tight text-white mb-2 leading-snug group-hover:text-[#BA905E] transition-colors">
                     {course.title}
                   </h3>
 
@@ -100,7 +100,7 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
 
                   {/* Quick specs */}
                   <div className="flex items-center gap-2 py-3 border-t border-b border-white/5 mb-5">
-                    <Clock className="w-4 h-4 text-[#8AE600] shrink-0" />
+                    <Clock className="w-4 h-4 text-[#BA905E] shrink-0" />
                     <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Duration:</span>
                     <span className="text-xs font-bold text-white">{course.duration}</span>
                   </div>
@@ -128,14 +128,14 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
                   <button
                     id={`prog-details-${course.id}`}
                     onClick={() => setActiveCourseDetails(course)}
-                    className="flex-1 px-3 py-2.5 rounded-md text-xs font-mono uppercase tracking-wider text-white border border-white/10 hover:bg-white/5 bg-white/5 transition-colors flex items-center justify-center gap-1.5 cursor-pointer font-semibold"
+                    className="flex-1 px-3 py-2.5 rounded-md text-xs font-mono uppercase tracking-wider text-white border border-white/10 hover:bg-white/5 bg-white/5 transition-colors flex items-[...]"
                   >
                     View Syllabus
                   </button>
                   <button
                     id={`prog-enroll-${course.id}`}
                     onClick={() => onEnrollClick(course.title)}
-                    className="flex-1 px-3 py-2.5 rounded-md text-xs font-mono uppercase font-bold text-[#0F2B3C] bg-[#8AE600] hover:bg-[#9cf01a] hover:scale-102 transition-all flex items-center justify-center gap-1 cursor-pointer shadow-sm group hover:shadow-[0_0_15px_rgba(138,230,0,0.3)]"
+                    className="flex-1 px-3 py-2.5 rounded-md text-xs font-mono uppercase font-bold text-[#192153] bg-[#BA905E] hover:bg-[#c9a370] hover:scale-102 transition-all flex items-center [...]"
                   >
                     Enroll Now
                     <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -150,7 +150,7 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
         <div className="mt-12 text-center">
           <p className="text-xs text-slate-400 font-mono">
             * Unsure which program matches your background? Connect with our{" "}
-            <a href="#contact-section" className="text-[#8AE600] hover:underline font-bold">
+            <a href="#contact-section" className="text-[#BA905E] hover:underline font-bold">
               Admissions Coordinator
             </a>{" "}
             for a customized 1-on-1 counseling session.
@@ -176,7 +176,7 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl rounded-lg border border-white/10 bg-[#0B212E] p-6 md:p-8 shadow-2xl z-10 overflow-y-auto max-h-[90vh] text-left text-white [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              className="relative w-full max-w-2xl rounded-lg border border-white/10 bg-[#0F1B2E] p-6 md:p-8 shadow-2xl z-10 overflow-y-auto max-h-[90vh] text-left text-white [&::-webkit-scrollba[...]"
             >
               {/* Close Button */}
               <button
@@ -189,7 +189,7 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
 
               {/* Category & Ratings */}
               <div className="flex items-center gap-3 mb-4">
-                <span className="px-2.5 py-1 rounded-md bg-[#8AE600]/10 text-[#8AE600] text-xs font-mono font-bold tracking-wider uppercase border border-[#8AE600]/20">
+                <span className="px-2.5 py-1 rounded-md bg-[#BA905E]/10 text-[#BA905E] text-xs font-mono font-bold tracking-wider uppercase border border-[#BA905E]/20">
                   {activeCourseDetails.category}
                 </span>
                 <span className="text-xs text-slate-400 font-mono">
@@ -211,14 +211,14 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 {/* Skills Section */}
                 <div className="space-y-3 text-left">
-                  <h4 className="text-xs font-mono font-bold text-[#8AE600] uppercase tracking-widest flex items-center gap-1">
+                  <h4 className="text-xs font-mono font-bold text-[#BA905E] uppercase tracking-widest flex items-center gap-1">
                     <Sparkles className="w-4 h-4" />
                     Core Skills Covered
                   </h4>
                   <ul className="space-y-2">
                     {activeCourseDetails.skills.map((skill, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-slate-300 font-normal text-left">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#8AE600] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#BA905E] shrink-0" />
                         {skill}
                       </li>
                     ))}
@@ -227,14 +227,14 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
 
                 {/* Outcomes Section */}
                 <div className="space-y-3 text-left">
-                  <h4 className="text-xs font-mono font-bold text-teal-300 uppercase tracking-widest flex items-center gap-1">
+                  <h4 className="text-xs font-mono font-bold text-[#D4A574] uppercase tracking-widest flex items-center gap-1">
                     <BarChart className="w-4 h-4" />
                     Career Outcomes
                   </h4>
                   <ul className="space-y-2">
                     {activeCourseDetails.outcomes.map((out, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-slate-300 font-normal text-left">
-                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#D4A574] shrink-0" />
                         {out}
                       </li>
                     ))}
@@ -254,7 +254,7 @@ export function Programs({ onEnrollClick }: ProgramsProps) {
                     onEnrollClick(activeCourseDetails.title);
                     setActiveCourseDetails(null);
                   }}
-                  className="px-6 py-3.5 rounded-md font-mono text-xs font-bold uppercase tracking-wider text-[#0F2B3C] bg-[#8AE600] hover:bg-[#9cf01a] hover:scale-102 transition-all flex items-center gap-1 cursor-pointer shadow-md hover:shadow-[0_0_15px_rgba(138,230,0,0.3)]"
+                  className="px-6 py-3.5 rounded-md font-mono text-xs font-bold uppercase tracking-wider text-[#192153] bg-[#BA905E] hover:bg-[#c9a370] hover:scale-102 transition-all flex items-c[...]"
                 >
                   Apply &amp; Reserve Spot
                   <ChevronRight className="w-4 h-4" />
