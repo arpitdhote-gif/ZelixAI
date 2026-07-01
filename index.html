@@ -1,69 +1,224 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18280937423"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-18280937423');
-    </script>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZelixAI | AI Training, AI Consulting & AI Development Company</title>
-    <meta name="description" content="ZelixAI is an AI training and consulting company based in Nagpur, helping students, professionals and enterprises build AI solutions, AI agents and GenAI applications" />
-    <meta name="keywords" content="ZelixAI, AI Training Nagpur, Generative AI Course Nagpur, AI Consulting, AI Development, AI Agents, GenAI Applications" />
-    <meta name="robots" content="index, follow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZelixAI | AI Training, Consulting & Development</title>
+    <meta name="description" content="ZelixAI — AI training, consulting and development. Hands-on courses, custom AI solutions and agents for students, professionals and enterprises." />
     <link rel="canonical" href="https://zelixai.in/" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
     <meta name="theme-color" content="#0F2B3C" />
 
-    <meta property="og:locale" content="en_IN" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="ZelixAI" />
-    <meta property="og:title" content="ZelixAI | AI Training, AI Consulting & AI Development Company" />
-    <meta property="og:description" content="ZelixAI is an AI training and consulting company based in Nagpur, helping students, professionals and enterprises build AI solutions, AI agents and GenAI applications" />
-    <meta property="og:url" content="https://zelixai.in/" />
-    <meta property="og:image" content="https://zelixai.in/zelixlogo.jpg" />
-    <meta property="og:image:alt" content="ZelixAI logo" />
+    <!-- Favicons / Manifest -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@ZelixAI" />
-    <meta name="twitter:creator" content="@ZelixAI" />
-    <meta name="twitter:title" content="ZelixAI | AI Training, AI Consulting & AI Development Company" />
-    <meta name="twitter:description" content="ZelixAI is an AI training and consulting company based in Nagpur, helping students, professionals and enterprises build AI solutions, AI agents and GenAI applications" />
-    <meta name="twitter:image" content="https://zelixai.in/zelixlogo.jpg" />
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ZelixAI",
-        "url": "https://zelixai.in/",
-        "logo": "https://zelixai.in/zelixlogo.jpg",
-        "sameAs": [
-          "https://www.linkedin.com/company/zelixai",
-          "https://www.instagram.com/zelixai"
-        ],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+91 98236 12171",
-            "contactType": "customer support",
-            "areaServed": "IN",
-            "availableLanguage": ["English", "Hindi"]
-          }
-        ]
+    <!-- Critical styles (small example to approximate the provided UI) -->
+    <style>
+      :root{
+        --dark:#123b2f;     /* deep green */
+        --accent:#b8ff2f;   /* lime accent */
+        --muted:#f5f7f5;
+        --text:#0b1b17;
+        --card:#eaf2ea;
+        --radius:12px;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       }
-    </script>
+      *{box-sizing:border-box}
+      body{margin:0;color:var(--text);background:var(--muted);line-height:1.4}
+      /* Top contact bar */
+      .contact-bar{background:var(--dark);color:#fff;padding:.5rem 1rem;font-size:.9rem;display:flex;justify-content:space-between;align-items:center}
+      .contact-left{display:flex;gap:1rem;align-items:center}
+      .contact-left span{display:inline-flex;gap:.4rem;align-items:center}
+      .contact-right{display:flex;gap:.6rem;align-items:center}
+      .social-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+
+      /* Nav */
+      header{background:#fff}
+      .nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem}
+      .logo{display:flex;align-items:center;gap:.6rem;font-weight:700}
+      .logo img{height:40px}
+      nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.25rem;align-items:center}
+      nav a{color:var(--text);text-decoration:none;font-weight:600}
+      .cta{background:var(--dark);color:#fff;padding:.55rem .9rem;border-radius:999px}
+
+      /* Hero */
+      .hero{max-width:1200px;margin:1.5rem auto;padding:1.5rem;display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+      .hero .eyebrow{color:var(--accent);font-weight:700;margin-bottom:.6rem;display:inline-block}
+      .hero h1{font-size:2.1rem;margin:.2rem 0 1rem}
+      .hero p{color:#47524a;margin-bottom:1.2rem}
+      .btn{display:inline-block;padding:.6rem 1rem;border-radius:999px;background:var(--dark);color:#fff;text-decoration:none;margin-right:.6rem}
+      .btn--ghost{border:1px solid var(--dark);background:transparent;color:var(--dark)}
+      .hero-image{background:#fff;border-radius:16px;padding:1rem;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;align-items:center}
+      .img-block{width:48%;border-radius:10px;overflow:hidden;min-height:80px;background:#ddd}
+      .hero .kicker-row{background:var(--dark);color:#fff;padding:.6rem;border-radius:999px;display:inline-flex;gap:.6rem;align-items:center;font-weight:700;margin-top:.8rem}
+
+      /* Ticker */
+      .ticker{background:var(--dark);color:#fff;padding:.55rem 0;margin-top:1rem}
+      .ticker .inner{max-width:1200px;margin:0 auto;display:flex;gap:2rem;align-items:center;overflow:hidden;padding:0 .75rem}
+      .ticker span{padding:0 .5rem;white-space:nowrap}
+
+      /* About + stats */
+      .about{max-width:1200px;margin:2rem auto;padding:1.5rem;background:#fff;border-radius:14px;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+      .about img{width:100%;border-radius:10px}
+      .stats{display:flex;gap:1.25rem;margin-top:1rem;flex-wrap:wrap}
+      .stat{flex:1;min-width:120px;background:var(--card);padding:.8rem;border-radius:8px;text-align:center}
+
+      /* Services section (dark green) */
+      .services-hero{background:linear-gradient(180deg,var(--dark),#113b32);color:#fff;padding:2rem;margin-top:2rem}
+      .services-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+      .service-card{background:#143f33;border-radius:12px;padding:1rem;min-height:160px;display:flex;flex-direction:column;justify-content:space-between}
+      .service-card h3{margin:0 0 .6rem}
+      .service-card p{color:#cfe6d7}
+      .highlight{background:var(--accent);color:#07220a;border-radius:12px;padding:1rem;transform:translateY(-18px);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+
+      /* Footer (simple) */
+      footer{Padding:2rem;text-align:center;color:#47524a}
+
+      @media (max-width:900px){
+        .hero{grid-template-columns:1fr; padding:1rem}
+        .services-inner{grid-template-columns:1fr}
+        .ticker .inner{gap:1rem}
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Top contact bar -->
+    <div class="contact-bar" role="region" aria-label="Contact information">
+      <div class="contact-left">
+        <span>📞 +91 98236 12171</span>
+        <span>✉️ hello@zelixai.in</span>
+        <span>📍 Nagpur, Maharashtra</span>
+      </div>
+      <div class="contact-right">
+        <span>Follow</span>
+        <span class="social-dot" aria-hidden="true"></span>
+        <span class="social-dot" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header>
+      <div class="nav-wrap" role="navigation" aria-label="Main Navigation">
+        <div class="logo">
+          <img src="/zelixlogo.jpg" alt="ZelixAI logo" />
+          <div>ZelixAI</div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a class="cta" href="#contact">Get A Quote</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home" aria-label="Intro">
+      <div>
+        <div class="eyebrow">Elevate Your Brand With Us</div>
+        <h1>Empowering Your Success with AI Expertise</h1>
+        <p>We train, consult and build AI solutions — from generative agents to production-ready applications for businesses and learners.</p>
+        <div>
+          <a class="btn" href="#services">Explore More</a>
+          <a class="btn btn--ghost" href="#projects">View All Services</a>
+        </div>
+
+        <div class="kicker-row" aria-hidden="true" style="margin-top:16px;">
+          <span>Trusted by startups & enterprises</span>
+        </div>
+      </div>
+
+      <aside class="hero-image" aria-hidden="true">
+        <div class="img-block" style="background-image:url('/assets/team-1.jpg');background-size:cover;background-position:center"></div>
+        <div class="img-block" style="background-image:url('/assets/team-2.jpg');background-size:cover;background-position:center"></div>
+        <div class="img-block" style="background-image:url('/assets/team-3.jpg');background-size:cover;background-position:center"></div>
+        <div class="img-block" style="background-image:url('/assets/team-4.jpg');background-size:cover;background-position:center"></div>
+      </aside>
+    </section>
+
+    <!-- Scrolling ticker of services -->
+    <div class="ticker" aria-hidden="true">
+      <div class="inner">
+        <span>AI Training</span>
+        <span>Content Automation</span>
+        <span>AI Agents</span>
+        <span>Custom AI Development</span>
+        <span>Model Consulting</span>
+      </div>
+    </div>
+
+    <!-- About + stats -->
+    <section id="about" class="about" aria-label="About ZelixAI">
+      <div>
+        <img src="/assets/about-grid.jpg" alt="Team collaborating" />
+      </div>
+      <div>
+        <h2>Empowering Your Success with AI Expertise</h2>
+        <p>We provide hands-on training, model development and AI consulting to help teams deliver production-quality machine learning, LLM-based agents and generative systems.</p>
+
+        <div class="stats" role="list">
+          <div class="stat" role="listitem"><strong>3k+</strong><div>Successful Projects</div></div>
+          <div class="stat" role="listitem"><strong>200+</strong><div>Expert Team</div></div>
+          <div class="stat" role="listitem"><strong>350+</strong><div>Happy Customers</div></div>
+          <div class="stat" role="listitem"><strong>16+</strong><div>Years of Experience</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services area (green background) -->
+    <section class="services-hero" id="services" aria-label="Our Services">
+      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 1rem 1rem;">
+        <div>
+          <div style="color:var(--accent);font-weight:700;margin-bottom:6px;">Our Services</div>
+          <h2 style="margin:0 0 .6rem;">Boost Your Brand with Our Expertise</h2>
+          <p style="margin:0;color:rgba(255,255,255,0.85);max-width:560px;">From AI strategy and consulting to hands-on training and agent development, we help organisations adopt AI responsibly and effectively.</p>
+        </div>
+        <a class="btn" href="#contact" style="background:var(--accent);color:#07220a;padding:.6rem 1rem;border-radius:999px;">View All Services</a>
+      </div>
+
+      <div class="services-inner" style="max-width:1200px;margin:0 auto">
+        <div class="service-card">
+          <h3>Social Media Marketing</h3>
+          <p>Automate content generation and scheduling with smart workflows and model-backed creativity.</p>
+          <a class="btn btn--ghost" href="#social">Learn more →</a>
+        </div>
+
+        <div class="highlight" aria-hidden="true">
+          <h3 style="margin-top:0">Content Marketing</h3>
+          <p style="margin-bottom:1rem">Tailored content pipelines, summarization and generation to scale your communications.</p>
+          <a class="btn" href="#content" style="background:var(--dark);color:#fff;padding:.5rem .8rem;border-radius:8px;">Learn more</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Email Marketing</h3>
+          <p>Personalized campaigns using model-based segmentation and intelligent copy variations.</p>
+          <a class="btn btn--ghost" href="#email">Learn more →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="max-width:1200px;margin:0 auto">
+        <p>&copy; <span id="year"></span> ZelixAI — All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // small helpers
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Load production JS bundle (replace with your compiled bundle path) -->
+    <script type="module" src="/dist/main.js"></script>
   </body>
 </html>
