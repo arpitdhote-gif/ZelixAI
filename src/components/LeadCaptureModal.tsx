@@ -15,12 +15,17 @@ import {
 } from "lucide-react";
 import { LogoIcon } from "./LogoIcon";
 
-export function LeadCaptureModal() {
-  const [isOpen, setIsOpen] = useState(false);
+interface LeadCaptureModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  initialCourse?: string;
+}
+
+export function LeadCaptureModal({ isOpen, onClose, initialCourse = "" }: LeadCaptureModalProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [course, setCourse] = useState("");
+  const [course, setCourse] = useState(initialCourse);
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -41,19 +46,11 @@ export function LeadCaptureModal() {
   ];
 
   useEffect(() => {
-    // Check if user has already submitted or seen this modal
-    const hasBeenShown = localStorage.getItem("zelix_lead_captured_v1");
-    if (!hasBeenShown) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 15000); // 15 seconds after page load
-
-      return () => clearTimeout(timer);
-    }
-  }, []);
+    setCourse(initialCourse);
+  }, [initialCourse]);
 
   const handleClose = () => {
-    setIsOpen(false);
+    onClose();
     // Even if closed without submitting, we set a temporary flag for this session to avoid annoying the user
     // but keep it openable again on next session if they didn't submit.
     // If they did submit, we permanently store it.
@@ -134,10 +131,10 @@ export function LeadCaptureModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
-            className="relative w-full max-w-lg bg-[#0D2534] border border-white/10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden z-10 flex flex-col max-h-[90vh]"
+            className="relative w-full max-w-lg border border-[#BA905E]/20 bg-[#192153] rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.45)] overflow-hidden z-10 flex flex-col max-h-[90vh]"
           >
             {/* Top gradient glow line */}
-            <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-transparent via-[#8AE600] to-teal-400" />
+            <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-transparent via-[#BA905E] to-[#B1D2FA]" />
 
             {/* Close Button Top Right */}
             <button
@@ -156,8 +153,8 @@ export function LeadCaptureModal() {
                 <>
                   {/* Premium Branding & Offer Header */}
                   <div className="text-center space-y-3 pt-2">
-                    <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-[#8AE600]/10 border border-[#8AE600]/20 text-xs font-mono font-bold tracking-wider text-[#8AE600]">
-                      <Gift className="w-4 h-4 text-[#8AE600] animate-bounce" />
+                    <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-[#BA905E]/10 border border-[#BA905E]/20 text-xs font-mono font-bold tracking-wider text-[#BA905E]">
+                      <Gift className="w-4 h-4 text-[#BA905E] animate-bounce" />
                       EXCLUSIVE COMPLIMENTARY OFFER
                     </div>
                     
@@ -168,7 +165,7 @@ export function LeadCaptureModal() {
 
                     <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-none mt-2">
                       Get a Free AI <br />
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AE600] to-teal-300">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA905E] to-[#B1D2FA]">
                         Career Roadmap + Consultation
                       </span>
                     </h3>
@@ -204,7 +201,7 @@ export function LeadCaptureModal() {
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="Arpit Dhote"
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0B1E2B] border border-white/5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#8AE600]/50 focus:ring-2 focus:ring-[#8AE600]/10 transition-all font-normal"
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0f2137] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#BA905E]/60 focus:ring-2 focus:ring-[#BA905E]/10 transition-all font-normal"
                         />
                       </div>
                     </div>
@@ -227,7 +224,7 @@ export function LeadCaptureModal() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="name@example.com"
-                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0B1E2B] border border-white/5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#8AE600]/50 focus:ring-2 focus:ring-[#8AE600]/10 transition-all font-normal"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0f2137] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#BA905E]/60 focus:ring-2 focus:ring-[#BA905E]/10 transition-all font-normal"
                           />
                         </div>
                       </div>
@@ -267,10 +264,10 @@ export function LeadCaptureModal() {
                           required
                           value={course}
                           onChange={(e) => setCourse(e.target.value)}
-                          className="w-full pl-10 pr-10 py-3 rounded-xl bg-[#0B1E2B] border border-white/5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#8AE600]/50 focus:ring-2 focus:ring-[#8AE600]/10 transition-all font-normal appearance-none cursor-pointer"
+                          className="w-full pl-10 pr-10 py-3 rounded-xl bg-[#0f2137] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#BA905E]/60 focus:ring-2 focus:ring-[#BA905E]/10 transition-all font-normal appearance-none cursor-pointer"
                         >
                           {courseOptions.map((opt) => (
-                            <option key={opt.value} value={opt.value} className="bg-[#0D2534] text-white">
+                            <option key={opt.value} value={opt.value} className="bg-[#192153] text-white">
                               {opt.label}
                             </option>
                           ))}
@@ -295,7 +292,7 @@ export function LeadCaptureModal() {
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
                           placeholder="Let us know your current background and career aspirations..."
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0B1E2B] border border-white/5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#8AE600]/50 focus:ring-2 focus:ring-[#8AE600]/10 transition-all font-normal resize-none"
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0f2137] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#BA905E]/60 focus:ring-2 focus:ring-[#BA905E]/10 transition-all font-normal resize-none"
                         />
                       </div>
                     </div>
@@ -304,7 +301,7 @@ export function LeadCaptureModal() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full mt-2 py-4 rounded-xl bg-[#8AE600] hover:bg-[#9cf01a] disabled:bg-slate-700 disabled:cursor-not-allowed text-[#0B1E2B] text-xs font-mono font-black uppercase tracking-widest transition-all shadow-lg hover:shadow-[0_0_20px_rgba(138,230,0,0.25)] flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full mt-2 py-4 rounded-xl bg-[#BA905E] hover:bg-[#d1a66e] disabled:bg-slate-700 disabled:cursor-not-allowed text-[#192153] text-xs font-mono font-black uppercase tracking-widest transition-all shadow-lg hover:shadow-[0_0_20px_rgba(186,144,94,0.25)] flex items-center justify-center gap-2 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
@@ -328,14 +325,14 @@ export function LeadCaptureModal() {
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="w-16 h-16 rounded-full bg-[#8AE600]/10 border-2 border-[#8AE600] flex items-center justify-center text-[#8AE600]"
+                    className="w-16 h-16 rounded-full bg-[#BA905E]/10 border-2 border-[#BA905E] flex items-center justify-center text-[#BA905E]"
                   >
                     <CheckCircle2 className="w-8 h-8" />
                   </motion.div>
 
                   <div className="space-y-2">
                     <h3 className="text-2xl font-black text-white tracking-tight">Consultation Requested!</h3>
-                    <p className="text-sm text-[#8AE600] font-mono font-bold uppercase tracking-wider">
+                    <p className="text-sm text-[#BA905E] font-mono font-bold uppercase tracking-wider">
                       Your Career Roadmap is Awaiting
                     </p>
                   </div>

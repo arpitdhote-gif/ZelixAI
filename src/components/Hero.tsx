@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Bot, Compass, Award, Sparkles, CheckCircle } from "lucide-react";
-import { LogoIcon } from "./LogoIcon";
+import { ArrowRight, Bot, Sparkles } from "lucide-react";
 
 interface HeroProps {
   onConsultationClick: () => void;
@@ -9,100 +8,80 @@ interface HeroProps {
 
 export function Hero({ onConsultationClick, onExploreProgramsClick }: HeroProps) {
   return (
-    <section id="hero-section" className="relative pt-32 pb-20 md:pt-36 md:pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-[#0F2B3C] transition-colors duration-300">
-      {/* Background gradients */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#8AE600]/5 blur-3xl" />
-        <div className="absolute top-20 right-10 w-[500px] h-[500px] rounded-full bg-[#8AE600]/5 blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-[#8AE600]/5 blur-3xl" />
-        {/* Abstract grid lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:20px_20px]" />
+    <section id="hero-section" className="relative overflow-hidden bg-[#192153] px-6 py-24 text-white sm:px-8 lg:px-10 lg:py-32">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-[#B1D2FA]/20 blur-3xl" />
+        <div className="absolute right-0 top-16 h-96 w-96 rounded-full bg-[#BA905E]/20 blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-[#B1D2FA]/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:24px_24px]" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center space-y-8">
-        {/* Centered Content */}
-        <div className="w-full flex flex-col items-center space-y-8 text-center">
-          {/* Tag */}
-          <motion.div 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#8AE600]/10 border border-[#8AE600]/20 text-[#8AE600] font-mono text-[10px] font-bold uppercase tracking-widest shadow-sm"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-[#8AE600] animate-spin" style={{ animationDuration: "3s" }} />
-            Central India's Premier AI Hub
-          </motion.div>
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#B1D2FA]/25 bg-white/10 px-4 py-2 text-[13px] font-semibold uppercase tracking-[0.35em] text-[#B1D2FA] sm:text-sm"
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          Central India’s Premier AI Hub
+        </motion.div>
 
-          {/* Heading */}
-          <div className="space-y-4 w-full flex flex-col items-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight text-center"
-            >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AE600] to-teal-300">
-                Transform Your Career
-              </span><br />
-              With Artificial Intelligence
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base md:text-lg text-slate-300 max-w-xl font-normal leading-relaxed text-center mx-auto"
-            >
-              Master Generative AI, RAG, and Agentic Systems with industry-focused training from the region's top experts.
-            </motion.p>
-          </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="max-w-4xl space-y-6"
+        >
+          <h1 className="text-4xl font-black leading-tight tracking-[-0.03em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Transform your career with <span className="text-[#B1D2FA]">artificial intelligence</span>
+          </h1>
+          <p className="mx-auto max-w-2xl text-lg leading-8 text-[#eef4ff] sm:text-xl">
+            Master Generative AI, RAG, and Agentic Systems with premium training from seasoned practitioners and mentors.
+          </p>
+        </motion.div>
 
-          {/* CTAs */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 pt-2 justify-center items-center w-full max-w-md mx-auto"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-10 flex flex-col gap-4 sm:flex-row"
+        >
+          <button
+            id="hero-enroll-btn"
+            onClick={onExploreProgramsClick}
+            className="brand-button group gap-2 px-8 py-4 text-sm uppercase tracking-[0.2em]"
           >
-            <button
-              id="hero-enroll-btn"
-              onClick={onExploreProgramsClick}
-              className="px-8 py-4 bg-[#8AE600] text-[#0F2B3C] font-bold uppercase text-xs tracking-wider rounded-md hover:bg-[#9cf01a] transition-all shadow-md hover:scale-[1.01] hover:shadow-[0_0_20px_rgba(138,230,0,0.4)] flex items-center justify-center gap-2 cursor-pointer group w-full sm:w-auto"
-            >
-              Explore Programs
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-              id="hero-consult-btn"
-              onClick={onConsultationClick}
-              className="px-8 py-4 border border-white/10 rounded-md text-xs font-bold uppercase tracking-wider text-white hover:bg-white/5 bg-white/5 transition-all duration-300 hover:scale-[1.01] flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full sm:w-auto"
-            >
-              <Bot className="w-4 h-4 text-[#8AE600] animate-bounce" />
-              Book Consultation
-            </button>
-          </motion.div>
+            Explore Programs
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </button>
+          <button
+            id="hero-consult-btn"
+            onClick={onConsultationClick}
+            className="brand-outline gap-2 border-white/15 bg-white/10 px-8 py-4 text-sm uppercase tracking-[0.2em] text-white hover:bg-white/15"
+          >
+            <Bot className="h-4 w-4 text-[#BA905E]" />
+            Book Consultation
+          </button>
+        </motion.div>
 
-          {/* Quick stats centered */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-3 gap-8 pt-12 border-t border-white/5 w-full max-w-2xl mx-auto text-center"
-          >
-            <div>
-              <div className="text-3xl md:text-4xl font-extrabold text-white">500+</div>
-              <div className="text-[10px] uppercase tracking-widest text-slate-400 font-mono mt-1">Students Trained</div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-14 grid w-full max-w-3xl gap-4 rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.6)] backdrop-blur md:grid-cols-3"
+        >
+          {[
+            { value: "500+", label: "Students Trained" },
+            { value: "10+", label: "Live Projects" },
+            { value: "100%", label: "Placement + Interview Prep" },
+          ].map((item) => (
+            <div key={item.label} className="rounded-[1.25rem] border border-white/10 bg-[#192153]/70 p-4">
+              <div className="text-3xl font-black text-white">{item.value}</div>
+              <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#B1D2FA]">{item.label}</div>
             </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-extrabold text-[#8AE600]">10+</div>
-              <div className="text-[10px] uppercase tracking-widest text-slate-400 font-mono mt-1">Live Projects</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-extrabold text-white">100%</div>
-              <div className="text-[10px] uppercase tracking-widest text-slate-400 font-mono mt-1">Placement Assist</div>
-            </div>
-          </motion.div>
-        </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

@@ -1,312 +1,83 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Hero } from "./components/Hero";
 import { Programs } from "./components/Programs";
-import { FutureOfAi } from "./components/FutureOfAi";
-import { ProjectShowcase } from "./components/ProjectShowcase";
 import { TechEcosystem } from "./components/TechEcosystem";
-import { Testimonials } from "./components/Testimonials";
-import { Contact } from "./components/Contact";
 import { FaqSection } from "./components/FaqSection";
-import { StructuredContent } from "./components/StructuredContent";
-import { LogoIcon } from "./components/LogoIcon";
-import { LeadCaptureModal } from "./components/LeadCaptureModal";
+import { Testimonials } from "./components/Testimonials";
 import { KnowledgeBase } from "./components/KnowledgeBase";
-import { Bot, Menu, X, ArrowUpRight, Compass, HelpCircle, Briefcase, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { ContactEnhanced } from "./components/ContactEnhanced";
+import { LeadCaptureModal } from "./components/LeadCaptureModal";
+import { WhatYouGet } from "./components/WhatYouGet";
 
 export default function App() {
-  const [preselectedCourse, setPreselectedCourse] = useState<string>("");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleEnrollRedirect = (courseName: string) => {
-    setPreselectedCourse(courseName);
-    const element = document.getElementById("contact-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const handleConsultationOpen = () => {
-    const element = document.getElementById("contact-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const navLinks = [
-    { label: "What You Get", href: "#why-choose-us" },
-    { label: "Programs", href: "#programs-section" },
-    { label: "Knowledge", href: "#knowledge-section" },
-    { label: "Projects", href: "#projects-section" },
-    { label: "Ecosystem", href: "#ecosystem-section" },
-    { label: "Testimonials", href: "#testimonials-section" },
-    { label: "Contact", href: "#contact-section" }
-  ];
-
-  const sectionMeta = [
-    {
-      id: "hero-section",
-      title: "ZelixAI – AI Training Nagpur | Generative AI Course Nagpur | Corporate AI Training India",
-      description: "ZelixAI provides AI training, generative AI courses, AI agents development, data science programs, corporate AI upskilling, and AI consulting services from Nagpur, Maharashtra."
-    },
-    {
-      id: "why-choose-us",
-      title: "AI Training Nagpur | ZelixAI",
-      description: "ZelixAI delivers practical AI training in Nagpur with live projects, local campus support, and industry-ready consulting services."
-    },
-    {
-      id: "programs-section",
-      title: "AI Programs & Courses | ZelixAI Nagpur",
-      description: "Explore ZelixAI programs including Generative AI, AI Agents, Data Science and Machine Learning training for students and professionals in Central India."
-    },
-    {
-      id: "knowledge-section",
-      title: "AI Knowledge Base | ZelixAI",
-      description: "Read answer-engine optimized AI glossary, career guides, and Nagpur-focused resources from ZelixAI."
-    },
-    {
-      id: "faq-section",
-      title: "ZelixAI FAQs | AI Training Nagpur",
-      description: "Find answers on ZelixAI course structure, placement support, corporate training, and local AI upskilling in Nagpur."
-    },
-    {
-      id: "contact-section",
-      title: "Contact ZelixAI Nagpur | AI Consultancy India",
-      description: "Contact ZelixAI for AI training, corporate AI consulting, and data science programs in Nagpur, Maharashtra."
-    }
-  ];
+  const [preselectedCourse, setPreselectedCourse] = useState("");
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   useEffect(() => {
-    const updateMetadata = () => {
-      const offset = window.innerHeight * 0.25;
-      const activeSection = sectionMeta.find((section) => {
-        const el = document.getElementById(section.id);
-        if (!el) return false;
-        const rect = el.getBoundingClientRect();
-        return rect.top <= offset && rect.bottom > 0;
-      }) || sectionMeta[0];
-
-      document.title = activeSection.title;
-      const descriptionMeta = document.querySelector('meta[name="description"]');
-      if (descriptionMeta) {
-        descriptionMeta.setAttribute("content", activeSection.description);
-      }
-    };
-
-    updateMetadata();
-    window.addEventListener("scroll", updateMetadata, { passive: true });
-    return () => window.removeEventListener("scroll", updateMetadata);
+    const timer = window.setTimeout(() => setIsLeadModalOpen(true), 10000);
+    return () => window.clearTimeout(timer);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleConsultationClick = () => {
+    setIsLeadModalOpen(true);
+  };
+
+  const handleExploreProgramsClick = () => {
+    scrollToSection("programs-section");
+  };
+
+  const handleEnrollClick = (courseName: string) => {
+    setPreselectedCourse(courseName);
+    setIsLeadModalOpen(true);
+    scrollToSection("contact-section");
+  };
+
   return (
-    <div className="min-h-screen bg-[#0F2B3C] text-white transition-colors duration-300 relative font-sans antialiased selection:bg-[#8AE600]/10 selection:text-[#8AE600]">
-      
-      {/* Floating Premium Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0F2B3C]/90 backdrop-filter backdrop-blur-md transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          
-          {/* Logo Brand */}
-          <a href="#hero-section" className="flex items-center gap-2.5 group" aria-label="Go to top of page">
-            <div className="w-12 h-12 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <LogoIcon className="w-12 h-12" />
-            </div>
-            <div className="text-left">
-              <span className="font-sans font-bold text-lg tracking-wider text-white uppercase group-hover:text-[#8AE600] transition-colors">
-                ZELIX AI
-              </span>
-            </div>
-          </a>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {navLinks.map((link, idx) => (
-              <a
-                key={idx}
-                href={link.href}
-                className="text-[11px] font-mono font-bold tracking-wider text-slate-300 hover:text-[#8AE600] transition-colors uppercase"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Action button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <button
-              id="header-apply-cta"
-              onClick={() => handleEnrollRedirect("")}
-              className="px-5 py-2.5 rounded-md font-mono font-bold text-xs tracking-wider uppercase text-[#0F2B3C] bg-[#8AE600] hover:bg-[#9cf01a] hover:scale-102 transition-all cursor-pointer flex items-center gap-1 shadow-md hover:shadow-[0_0_15px_rgba(138,230,0,0.3)]"
-            >
-              Apply Batch Spot
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-
-          {/* Mobile hamburger button */}
-          <div className="flex items-center gap-3.5 lg:hidden">
-            <button
-              id="mobile-hamburger-toggle"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md border border-white/10 bg-white/5 text-slate-300 hover:text-white cursor-pointer shadow-sm"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
+    <main className="min-h-screen bg-[#FFFAEE] text-[#192153]">
+      <Hero
+        onConsultationClick={handleConsultationClick}
+        onExploreProgramsClick={handleExploreProgramsClick}
+      />
+      <WhatYouGet />
+      <Programs onEnrollClick={handleEnrollClick} />
+      <TechEcosystem />
+      <FaqSection />
+      <Testimonials />
+      <KnowledgeBase />
+      <ContactEnhanced preselectedCourse={preselectedCourse} />
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} initialCourse={preselectedCourse} />
+      <footer className="relative overflow-hidden border-t border-white/10 bg-[#192153] px-6 py-14 text-center text-sm text-[#eef4ff] sm:px-8 lg:px-10">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-[#B1D2FA]/20 blur-3xl" />
+          <div className="absolute right-0 top-16 h-96 w-96 rounded-full bg-[#BA905E]/20 blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-[#B1D2FA]/10 blur-3xl" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:24px_24px]" />
         </div>
-
-        {/* Mobile slide-down menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-white/10 bg-[#0F2B3C]/95 overflow-hidden"
-            >
-              <div className="p-6 space-y-4 text-left">
-                {navLinks.map((link, idx) => (
-                  <a
-                    key={idx}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-xs font-mono font-bold text-slate-300 hover:text-[#8AE600] transition-colors uppercase py-2 border-b border-white/5"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-                <button
-                  id="mobile-menu-apply-cta"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    handleEnrollRedirect("");
-                  }}
-                  className="w-full py-3.5 rounded-md text-center font-mono font-bold text-xs tracking-wider uppercase text-[#0F2B3C] bg-[#8AE600] hover:bg-[#9cf01a] cursor-pointer block"
-                >
-                  Apply Batch Spot
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-
-      {/* Main Sections */}
-      <main className="relative z-10">
-        
-        {/* Hero Section */}
-        <Hero 
-          onConsultationClick={handleConsultationOpen} 
-          onExploreProgramsClick={() => {
-            const el = document.getElementById("programs-section");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-          }} 
-        />
-
-        {/* Breadcrumb navigation for on-page structure */}
-        <div className="max-w-7xl mx-auto px-6 pt-6">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[11px] font-mono text-slate-400">
-            <a href="#hero-section" className="hover:text-[#8AE600]">Home</a>
-            <span aria-hidden="true">/</span>
-            <a href="#why-choose-us" className="hover:text-[#8AE600]">Why Choose Us</a>
-            <span aria-hidden="true">/</span>
-            <a href="#programs-section" className="hover:text-[#8AE600]">Programs</a>
-            <span aria-hidden="true">/</span>
-            <a href="#knowledge-section" className="hover:text-[#8AE600]">Knowledge Base</a>
-            <span aria-hidden="true">/</span>
-            <a href="#contact-section" className="hover:text-[#8AE600]">Contact</a>
-          </nav>
-        </div>
-
-        {/* What You Get Section */}
-        <FutureOfAi />
-
-        {/* Programs Section */}
-        <Programs onEnrollClick={handleEnrollRedirect} />
-
-        {/* Structured Content Section */}
-        <StructuredContent />
-
-        {/* Course FAQ Section */}
-        <FaqSection />
-
-        {/* Tech Ecosystem Section */}
-        <TechEcosystem />
-
-        {/* Project Showcase Section */}
-        <ProjectShowcase />
-
-        {/* Knowledge Base Section */}
-        <KnowledgeBase />
-
-        {/* Testimonials Section */}
-        <Testimonials />
-
-        {/* Contact Admissions Section */}
-        <Contact preselectedCourse={preselectedCourse} />
-
-      </main>
-
-      {/* Premium Footer with detailed Sitemaps */}
-      <footer className="bg-[#0B1E2B] border-t border-white/5 text-slate-300 py-16 text-left relative z-10 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10">
-          
-          {/* Brand Col */}
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-2">
-              <LogoIcon className="w-10 h-10" />
-              <span className="font-sans font-bold text-base text-white tracking-wider uppercase">ZELIX AI</span>
-            </div>
-            <p className="text-xs text-slate-400 font-light leading-relaxed max-w-sm">
-              Practical AI education and consultancy for students, professionals, startups, and organizations looking to build real-world AI skills and solutions.
-            </p>
-            <div className="text-[10px] font-mono text-slate-500">
-              Approved corporate training provider &bull; Nagpur Tech Hub &bull; ISO 9001 Alignment
-            </div>
-          </div>
-
-          {/* Quick links */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest">Elite Core Programs</h4>
-            <ul className="space-y-2 text-xs">
-              <li><a href="#programs-section" className="hover:text-[#8AE600] transition-colors">Generative AI Specialization</a></li>
-              <li><a href="#programs-section" className="hover:text-[#8AE600] transition-colors">Agentic AI &amp; LLM Workflows</a></li>
-              <li><a href="#programs-section" className="hover:text-[#8AE600] transition-colors">Machine Learning</a></li>
-              <li><a href="#programs-section" className="hover:text-[#8AE600] transition-colors">Data Science &amp; Business BI</a></li>
-            </ul>
-          </div>
-
-          {/* Contact coordinates quick shortcuts */}
-          <div className="md:col-span-4 space-y-3">
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest">Campus Inquiries</h4>
-            <ul className="space-y-2 text-xs font-light">
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8AE600] mt-1.5 shrink-0" />
-                <span>Nagpur: 1st floor, Plot no. 74, Somalvada Layout, Jai Prakash Nagar, Somalwada, Nagpur, Maharashtra 440025</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8AE600] shrink-0" />
-                <span>WhatsApp line: +91 98236 12171</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8AE600] shrink-0" />
-                <span>Email: info@zelixai.in</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Copy lines */}
-        <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono text-slate-500">
-          <div>
-            &copy; 2026 Zelix AI. All educational rights reserved.
-          </div>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-[#8AE600] transition-colors">Terms of Operations</a>
-            <a href="#" className="hover:text-[#8AE600] transition-colors">Admissions Privacy</a>
-          </div>
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <p>© 2026 ZelixAI. Premium AI training and consultancy for ambitious learners and teams.</p>
         </div>
       </footer>
-      <LeadCaptureModal />
-    </div>
+
+      {/* WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/917522915151"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex cursor-pointer items-center justify-center rounded-full bg-[#25D366] p-3.5 text-white shadow-[0_8px_24px_rgba(37,211,102,0.4)] group hover:scale-105 active:scale-95 transition-transform"
+        aria-label="Chat on WhatsApp"
+      >
+        <div className="pointer-events-none absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping" />
+        <svg className="relative z-10 h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.528 2.017 14.077.99 11.5.99c-5.441 0-9.87 4.372-9.874 9.802-.001 1.73.469 3.414 1.36 4.916l-.993 3.629 3.734-.964zm13.757-7.74c-.298-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        </svg>
+        <span className="pointer-events-none absolute right-14 whitespace-nowrap rounded border border-slate-800 bg-slate-900 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-white opacity-0 transition-opacity group-hover:opacity-100">
+          Chat With Us
+        </span>
+      </a>
+    </main>
   );
 }

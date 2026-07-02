@@ -97,8 +97,8 @@ export function Contact({ preselectedCourse }: ContactProps) {
                 </div>
                 <div>
                   <p className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Call admissions</p>
-                  <a href="tel:+919823612171" className="text-sm font-bold text-white hover:text-[#8AE600] transition-colors">
-                    +91 98236 12171
+                  <a href="tel:+919168432121" className="text-sm font-bold text-white hover:text-[#8AE600] transition-colors">
+                    +91 9168432121
                   </a>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export function Contact({ preselectedCourse }: ContactProps) {
                         id="contact-form-phone"
                         type="tel"
                         required
-                        placeholder="+91 98236 12171"
+                        placeholder="+91 9168432121"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-3 rounded-md bg-[#0B1E2B] border border-white/10 focus:border-[#8AE600] focus:bg-[#0F2B3C] text-sm focus:outline-none transition-all text-white shadow-sm placeholder:text-slate-600"
@@ -295,7 +295,7 @@ export function Contact({ preselectedCourse }: ContactProps) {
                     </button>
                     
                      <a
-                      href="https://wa.me/919823612171?text=Hello%20Zelix%20AI%2C%20I'm%20interested%20in%20enrolling%20for%20the%20AI%20and%20Machine%20Learning%20programs."
+                      href="https://wa.me/917522915151?text=Hello%20Zelix%20AI%2C%20I'm%20interested%20in%20enrolling%20for%20the%20AI%20and%20Machine%20Learning%20programs."
                       target="_blank"
                       rel="noreferrer"
                       className="py-4 px-6 rounded-md font-mono text-xs uppercase tracking-wider text-white border border-white/10 bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"

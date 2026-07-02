@@ -346,118 +346,74 @@ const technologies: TechNode[] = [
 
 export function TechEcosystem() {
   return (
-    <section id="ecosystem-section" className="py-24 bg-[#0B1E2B] text-white relative overflow-hidden border-t border-white/5">
-      
-      {/* Background ambient decorative elements - Stripe / Vercel style grids */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8AE60005_1px,transparent_1px),linear-gradient(to_bottom,#8AE60005_1px,transparent_1px)] bg-[size:40px_40px]" />
-        <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#8AE600]/10 to-transparent blur-[120px] rounded-full" />
-        <div className="absolute top-[60%] right-0 w-[500px] h-[500px] bg-gradient-to-l from-teal-500/5 to-transparent blur-[120px] rounded-full" />
+    <section id="ecosystem-section" className="relative overflow-hidden bg-[#fffdf7] px-6 py-24 text-[#192153] sm:px-8 lg:px-10">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(25,33,83,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(25,33,83,0.05)_1px,transparent_1px)] bg-[size:28px_28px]" />
+        <div className="absolute left-1/2 top-0 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-[#B1D2FA]/20 blur-[120px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
-        {/* Header Block */}
-        <div className="text-left mb-20 space-y-4 max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8AE600]/10 border border-[#8AE600]/20 text-[11px] font-mono font-bold uppercase tracking-widest text-[#8AE600]">
-            <Binary className="w-3.5 h-3.5 text-[#8AE600] animate-pulse" />
-            Vetted Production Architecture
-          </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white leading-none">
-            Ecosystem <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8AE600] via-teal-300 to-emerald-400">
-              &amp; Tech Stack Pipeline
-            </span>
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="mb-16 mx-auto max-w-4xl space-y-5 text-center flex flex-col items-center">
+          <div className="section-pill">Vetted production architecture</div>
+          <h2 className="section-heading">
+            Ecosystem <span className="text-[#BA905E]">and tech stack</span>
           </h2>
-          <p className="text-slate-400 font-normal text-sm md:text-base max-w-2xl leading-relaxed">
-            We bypass historical simulations. Our engineers build and deploy real-world stateful agents, scalable RAG clusters, and production pipeline topologies.
+          <p className="section-copy max-w-2xl">
+            We train on the same tools and frameworks used to ship high-impact AI systems, from retrieval pipelines to agent orchestration and cloud deployment.
           </p>
         </div>
 
-        {/* Premium Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 items-stretch">
-          
-          {technologies.map((node, idx) => {
-            return (
-              <motion.div
-                key={node.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: idx * 0.03 }}
-                className={`${node.gridSpan} group relative rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-[#8AE600]/30 hover:bg-white/[0.04]`}
-                style={{
-                  boxShadow: "0 10px 30px -15px rgba(0,0,0,0.7)"
-                }}
-              >
-                {/* Micro tech grid line background (visible on hover) */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.05] bg-[linear-gradient(to_right,#8AE600_1px,transparent_1px),linear-gradient(to_bottom,#8AE600_1px,transparent_1px)] bg-[size:16px_16px] transition-all duration-500 pointer-events-none" />
-                
-                {/* Premium Glow effect behind logo */}
-                <div className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#8AE600]/10 to-transparent blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                
-                <div className="space-y-6">
-                  {/* Top row: Official Logo always visible & Category */}
-                  <div className="flex items-start justify-between">
-                    {/* SVG Logo Container (Strictly 64px x 64px) */}
-                    <div className="w-16 h-16 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center shadow-lg group-hover:border-[#8AE600]/40 transition-all duration-300 shrink-0 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(138,230,0,0.15)]">
-                      <TechLogo id={node.id} className="w-10 h-10 object-contain" />
-                    </div>
-                    
-                    <span className="text-[10px] font-mono font-bold text-slate-500 tracking-widest uppercase bg-white/5 px-2.5 py-1 rounded-md border border-white/5 group-hover:border-[#8AE600]/10 group-hover:text-slate-400 transition-all duration-300">
-                      {node.category}
-                    </span>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-12">
+          {technologies.map((node, idx) => (
+            <motion.div
+              key={node.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.45, delay: idx * 0.03 }}
+              className={`${node.gridSpan} section-card group relative flex flex-col items-center text-center justify-between overflow-hidden p-6 md:p-7`}
+            >
+              <div className="absolute inset-0 opacity-0 transition-all duration-500 group-hover:opacity-100" style={{ background: "linear-gradient(135deg, rgba(177,210,250,0.16) 0%, transparent 45%)" }} />
+              <div className="relative space-y-6 flex flex-col items-center">
+                <div className="flex flex-col items-center justify-center gap-4">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-[1.25rem] border border-[#192153]/10 bg-white shadow-[0_10px_25px_-12px_rgba(25,33,83,0.3)]">
+                    <TechLogo id={node.id} className="h-10 w-10 object-contain" />
                   </div>
-
-                  {/* Text Details */}
-                  <div className="space-y-2">
-                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight group-hover:text-[#8AE600] transition-colors duration-300 flex items-center gap-1.5">
-                      {node.name}
-                    </h3>
-                    <p className="text-sm font-semibold text-slate-300 leading-normal">
-                      {node.oneLiner}
-                    </p>
-                    <p className="text-xs text-slate-400 leading-relaxed font-normal">
-                      {node.description}
-                    </p>
-                  </div>
+                  <span className="rounded-full border border-[#192153]/10 bg-[#fffdf7] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#31406b]">
+                    {node.category}
+                  </span>
                 </div>
 
-                {/* Real-World Use Case at the bottom - fully integrated and styled */}
-                <div className="mt-8 pt-4 border-t border-white/5 group-hover:border-[#8AE600]/10 transition-colors duration-300">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <Workflow className="w-3.5 h-3.5 text-[#8AE600]" />
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-teal-300">Production Use Case</span>
-                  </div>
-                  <p className="text-[11px] text-slate-400 leading-relaxed font-normal italic">
-                    "{node.useCase}"
-                  </p>
+                <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-[#192153]">{node.name}</h3>
+                  <p className="text-sm font-semibold leading-7 text-[#31406b]">{node.oneLiner}</p>
+                  <p className="text-sm leading-7 text-[#31406b]/80">{node.description}</p>
                 </div>
+              </div>
 
-                {/* Modern subtle Vercel-style corner accent */}
-                <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-transparent group-hover:border-[#8AE600]/20 rounded-tr-2xl transition-all duration-300 pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-transparent group-hover:border-[#8AE600]/20 rounded-bl-2xl transition-all duration-300 pointer-events-none" />
-              </motion.div>
-            );
-          })}
-
+              <div className="relative mt-7 border-t border-[#192153]/10 pt-4 flex flex-col items-center">
+                <div className="mb-2 flex items-center justify-center gap-2">
+                  <Workflow className="h-3.5 w-3.5 text-[#BA905E]" />
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#BA905E]">Production use case</span>
+                </div>
+                <p className="text-sm leading-7 text-[#31406b]/80">“{node.useCase}”</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Dynamic callout banner at the bottom of the grid */}
-        <div className="mt-16 p-8 rounded-2xl border border-white/5 bg-[#0D2534] relative overflow-hidden text-left flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-[#8AE600]/5 rounded-full blur-[60px] pointer-events-none" />
-          <div className="space-y-2 relative z-10">
-            <h4 className="text-lg font-bold text-white">Looking for complete syllabus and pipeline integration guides?</h4>
-            <p className="text-sm text-slate-400">Download syllabus pipelines or get live admissions consulting on our RAG &amp; multi-agent systems modules.</p>
+        <div className="mt-16 flex flex-col items-center text-center justify-between gap-6 rounded-[2rem] border border-[#192153]/10 bg-white/80 p-8 shadow-[0_25px_70px_-35px_rgba(25,33,83,0.35)] md:flex-row md:text-left">
+          <div className="max-w-2xl space-y-2">
+            <h4 className="text-xl font-bold text-[#192153]">Looking for the full syllabus and implementation guides?</h4>
+            <p className="text-sm leading-7 text-[#31406b]">Get the complete learning pack for RAG, multi-agent systems, and applied AI delivery.</p>
           </div>
           <a
             href="#contact-section"
-            className="px-6 py-3 rounded-xl bg-[#8AE600] hover:bg-[#9cf01a] text-[#0B1E2B] text-xs font-mono font-extrabold uppercase tracking-widest transition-all shadow-lg hover:shadow-[0_0_20px_rgba(138,230,0,0.25)] shrink-0 cursor-pointer"
+            className="brand-button px-6 py-3 text-[11px] uppercase tracking-[0.25em]"
           >
-            Request Syllabus Pack
+            Request syllabus pack
           </a>
         </div>
-
       </div>
     </section>
   );

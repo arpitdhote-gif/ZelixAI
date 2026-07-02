@@ -1,82 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
+@import "./print.css";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --color-brand-blue: #2563eb;
-  --color-brand-indigo: #4f46e5;
-  --color-theme-bg: #f8fafc;
+  --color-brand-blue: #192153;
+  --color-brand-indigo: #BA905E;
+  --color-theme-bg: #FFFAEE;
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
   body {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-    background-color: #f8fafc;
-    color: #0f172a;
+    background: linear-gradient(180deg, #FFFAEE 0%, #fffdf7 100%);
+    color: #192153;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 }
 
-/* Custom Sophisticated Card utility classes for Light Theme */
-.theme-card {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+@layer components {
+  .section-shell {
+    @apply rounded-[2rem] border border-[#192153]/10 bg-white/80 shadow-[0_24px_70px_-36px_rgba(25,33,83,0.35)] backdrop-blur;
+  }
+
+  .section-card {
+    @apply rounded-[1.5rem] border border-[#192153]/10 bg-[#fffdfa] shadow-[0_20px_45px_-30px_rgba(25,33,83,0.28)];
+  }
+
+  .section-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-[#BA905E]/30 bg-[#BA905E]/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#BA905E];
+  }
+
+  .section-heading {
+    @apply text-3xl font-black leading-tight tracking-[-0.02em] text-[#192153] sm:text-4xl lg:text-5xl;
+  }
+
+  .section-copy {
+    @apply text-base leading-8 text-[#31406b];
+  }
+
+  .brand-button {
+    @apply inline-flex items-center justify-center rounded-full border border-transparent bg-[#BA905E] px-6 py-3 text-sm font-semibold text-[#192153] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_35px_-16px_rgba(186,144,94,0.55)];
+  }
+
+  .brand-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-[#192153]/15 bg-white/80 px-6 py-3 text-sm font-semibold text-[#192153] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#BA905E]/40 hover:bg-[#B1D2FA]/30;
+  }
 }
 
-.theme-card:hover {
-  border-color: rgba(37, 99, 235, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-}
-
-.theme-card-light {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
-}
-
-.theme-card-light:hover {
-  border-color: #2563eb;
-}
-
-.theme-btn-primary {
-  padding: 0.875rem 1.75rem;
-  background-color: #2563eb;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.875rem;
-  border-radius: 0.375rem;
-  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.15), 0 2px 4px -2px rgba(37, 99, 235, 0.15);
-  transition: all 0.2s ease-in-out;
-}
-
-.theme-btn-primary:hover {
-  background-color: #1d4ed8;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.25);
-}
-
-.theme-btn-secondary {
-  padding: 0.875rem 1.75rem;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  color: #1e293b;
-  font-size: 0.875rem;
-  font-weight: 600;
-  border-radius: 0.375rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.theme-btn-secondary:hover {
-  background-color: #f1f5f9;
-  border-color: rgba(15, 23, 42, 0.2);
-}
-
-/* Hide scrollbars but keep functionality */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

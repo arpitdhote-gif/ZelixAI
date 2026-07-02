@@ -83,52 +83,79 @@ export function FutureOfAi() {
   ];
 
   return (
-    <section id="why-choose-us" className="bg-[#0F2B3C] text-white relative overflow-hidden flex flex-col items-center">
-      
-      {/* Decorative subtle background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#8AE600]/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="why-choose-us" className="relative flex flex-col items-center overflow-hidden bg-[#FFFAEE] px-6 py-24 text-[#192153] sm:px-8 lg:px-10">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 top-1/4 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-[#B1D2FA]/30 blur-3xl" />
+        <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#BA905E]/10 blur-3xl" />
+        <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#B1D2FA]/20 blur-3xl" />
+      </div>
 
-      <div className="max-w-6xl w-full px-6 pt-24 pb-20 relative z-10 flex flex-col items-center">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <motion.h2 
+      <div className="relative z-10 flex w-full max-w-6xl flex-col items-center pb-20 pt-0">
+        <div className="mx-auto mb-16 max-w-3xl text-center space-y-5">
+          <div className="section-pill mx-auto">Why learners choose ZelixAI</div>
+          <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-sans"
+            className="section-heading"
           >
-            What All You Get at Zelix
+            What all you get at Zelix
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-[#8AE600] font-mono text-sm uppercase tracking-widest font-bold"
+            className="section-copy"
           >
             Train on real AI systems, not classroom theory.
           </motion.p>
         </div>
 
-        {/* DESKTOP INTERACTIVE DOME/ARCH */}
-        <div className="hidden lg:block relative w-[800px] h-[440px] mx-auto mt-12 mb-8 select-none">
-          
-          {/* Semicircular Glowing Arch Path */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 400" fill="none">
+        <div className="relative mx-auto mt-4 hidden w-full max-w-6xl lg:block">
+          <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 800 420" fill="none">
             <path
-              d="M 100 340 A 300 275 0 0 1 700 340"
-              stroke="#8AE600"
+              d="M 95 330 A 320 275 0 0 1 705 330"
+              stroke="#BA905E"
               strokeWidth="2.5"
               strokeDasharray="6 6"
-              className="opacity-60 filter drop-shadow-[0_0_8px_rgba(138,230,0,0.5)]"
+              className="opacity-70"
             />
           </svg>
 
-          {/* Central Hollow Logo & Tagline */}
-          <div className="absolute left-[400px] top-[255px] -translate-x-1/2 -translate-y-1/2 text-center w-[300px] space-y-2">
+          <div className="absolute right-[-0.5rem] top-[-3.25rem] z-20 hidden xl:block">
+            <div className="rounded-[2.5rem] border border-[#192153]/10 bg-white/80 p-5 shadow-[0_20px_45px_-30px_rgba(25,33,83,0.28)] backdrop-blur">
+              <div className="relative flex h-56 w-72 items-center justify-center">
+                <svg viewBox="0 0 320 220" className="h-56 w-72">
+                  <path
+                    d="M 28 174 A 132 132 0 0 1 292 174"
+                    fill="none"
+                    stroke="#192153"
+                    strokeWidth="16"
+                    strokeLinecap="round"
+                    opacity="0.14"
+                  />
+                  <path
+                    d="M 28 174 A 132 132 0 0 1 292 174"
+                    fill="none"
+                    stroke="#BA905E"
+                    strokeWidth="16"
+                    strokeLinecap="round"
+                    strokeDasharray="420"
+                    strokeDashoffset="92"
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#31406b]">Rated</span>
+                  <span className="mt-2 text-4xl font-black tracking-tight text-[#192153]">4.9/5</span>
+                  <span className="mt-2 text-[10px] uppercase tracking-[0.25em] text-[#BA905E]">By 500+ learners</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute left-[400px] top-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 space-y-2 text-center">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -136,47 +163,40 @@ export function FutureOfAi() {
               transition={{ duration: 0.6 }}
               className="space-y-1"
             >
-              <h3 className="text-4xl font-black tracking-[0.25em] text-[#8AE600] font-sans">
-                ZELIX AI
-              </h3>
-              <p className="text-slate-400 text-[10px] uppercase tracking-wider font-mono font-medium max-w-[240px] mx-auto leading-relaxed">
+              <h3 className="text-4xl font-black tracking-[0.25em] text-[#192153]">ZELIX AI</h3>
+              <p className="mx-auto max-w-[240px] text-[10px] font-medium uppercase tracking-wider leading-relaxed text-[#31406b]">
                 Orchestrating applied intelligence &amp; careers.
               </p>
             </motion.div>
           </div>
 
-          {/* Feature Nodes Placement */}
-          {nodes.map((node, index) => (
+          {nodes.map((node) => (
             <div
               key={node.title}
               className="absolute"
               style={{ left: `${node.x}px`, top: `${node.y}px` }}
             >
-              {/* White badge with electric green border */}
               <motion.div
-                whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(138,230,0,0.6)" }}
+                whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(186,144,94,0.25)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                className="w-14 h-14 rounded-full bg-white border-2 border-[#8AE600] flex items-center justify-center cursor-pointer shadow-[0_4px_15px_rgba(0,0,0,0.15)] relative z-20 group"
+                className="group relative z-20 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 border-[#BA905E] bg-[#FFFAEE] shadow-[0_4px_15px_rgba(25,33,83,0.12)]"
               >
                 {node.icon}
               </motion.div>
 
-              {/* Connected Labels */}
               <div className={`${node.labelClass} pointer-events-none transition-all duration-300`}>
-                <h4 className="text-xs font-black text-white uppercase tracking-wider mb-1">
+                <h4 className="mb-1 text-sm font-black uppercase tracking-wider text-[#192153]">
                   {node.title}
                 </h4>
-                <p className="text-slate-400 text-[10px] leading-relaxed max-w-[170px] mx-auto lg:mx-0">
+                <p className="mx-auto max-w-[190px] text-[13px] leading-relaxed text-[#31406b] lg:mx-0">
                   {node.description}
                 </p>
               </div>
             </div>
           ))}
-
         </div>
 
-        {/* MOBILE GRACEFUL COLLAPSIBLE LIST */}
-        <div className="lg:hidden w-full max-w-md mx-auto space-y-6">
+        <div className="mx-auto w-full max-w-md space-y-6 lg:hidden">
           {nodes.map((node, index) => (
             <motion.div
               key={node.title}
@@ -184,57 +204,47 @@ export function FutureOfAi() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex items-start gap-4 p-5 rounded-xl bg-white/5 border border-white/10 hover:border-[#8AE600]/30 transition-all duration-300"
+              className="flex items-start gap-4 rounded-[1.25rem] border border-[#192153]/10 bg-white/80 p-5 shadow-[0_20px_45px_-30px_rgba(25,33,83,0.28)] transition-all duration-300"
             >
-              {/* White Circle Badge */}
-              <div className="w-12 h-12 rounded-full bg-white border border-[#8AE600] flex items-center justify-center shrink-0 shadow-md">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#BA905E] bg-[#FFFAEE] shadow-md">
                 {node.icon}
               </div>
 
-              {/* Text service details */}
               <div className="space-y-1 text-left">
-                <h4 className="text-sm font-bold text-white tracking-tight uppercase">
+                <h4 className="text-[0.95rem] font-black uppercase tracking-tight text-[#192153]">
                   {node.title}
                 </h4>
-                <p className="text-xs text-slate-300 leading-relaxed font-light">
+                <p className="text-sm font-medium leading-relaxed text-[#31406b]">
                   {node.description}
                 </p>
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
 
-
-
-      {/* Floating CTA WhatsApp Widget */}
       <motion.a
-        href="https://wa.me/919823612171"
+        href="https://wa.me/917522915151"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_8px_24px_rgba(37,211,102,0.4)] flex items-center justify-center cursor-pointer group"
+        className="fixed bottom-6 right-6 z-50 flex cursor-pointer items-center justify-center rounded-full bg-[#25D366] p-3.5 text-white shadow-[0_8px_24px_rgba(37,211,102,0.4)] group"
         aria-label="Chat on WhatsApp"
       >
-        {/* Pulsing indicator background */}
-        <div className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30 pointer-events-none" />
-        
-        {/* Real official style clean WhatsApp icon representation */}
-        <svg 
-          className="w-6 h-6 fill-current relative z-10"
+        <div className="pointer-events-none absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping" />
+
+        <svg
+          className="relative z-10 h-6 w-6 fill-current"
           viewBox="0 0 24 24"
         >
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.528 2.017 14.077.99 11.5.99c-5.441 0-9.87 4.372-9.874 9.802-.001 1.73.469 3.414 1.36 4.916l-.993 3.629 3.734-.964zm13.757-7.74c-.298-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
         </svg>
 
-        {/* Hover speech bubble */}
-        <span className="absolute right-14 bg-slate-900 text-white text-[10px] font-mono uppercase tracking-wider font-bold py-1 px-2.5 rounded shadow-md pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-slate-800">
+        <span className="pointer-events-none absolute right-14 whitespace-nowrap rounded border border-slate-800 bg-slate-900 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-white opacity-0 transition-opacity group-hover:opacity-100">
           Chat With Us
         </span>
       </motion.a>
-
     </section>
   );
 }
