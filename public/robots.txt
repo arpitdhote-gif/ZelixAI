@@ -1,3 +1,20 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.zelixai.com/sitemap.xml
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Google Search
+User-agent: Googlebot
+Allow: /
+
+# Bing Search
+User-agent: Bingbot
+Allow: /
+
+# Sitemap References
+Sitemap: https://zelixai.in/sitemap.xml
+Sitemap: https://zelixai.in/sitemap-courses.xml
+
+# Crawl Delay (optional)
+Crawl-delay: 1
