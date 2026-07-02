@@ -1,60 +1,217 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Character encoding and viewport -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZelixAI | AI Training, AI Consulting & AI Development Company</title>
-    <meta name="description" content="ZelixAI is an AI training and consulting company based in Nagpur, helping students, professionals and enterprises build AI solutions, AI agents and GenAI applications." />
-    <meta name="keywords" content="ZelixAI, AI Training Nagpur, Generative AI Course Nagpur, AI Consulting, AI Development, AI Agents, GenAI Applications" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://zelixai.in/" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
-    <meta name="theme-color" content="#0F2B3C" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <!-- Document Title & Primary Meta -->
+    <title>ZelixAI | Premium AI Training, GenAI Consulting & AI Development Company Nagpur</title>
+    <meta name="description" content="ZelixAI: Premium AI training & consulting in Nagpur. Master Generative AI, RAG, and Agentic Systems. 500+ students trained. 100% placement support. Expert mentorship from industry leaders." />
+    <meta name="keywords" content="AI training Nagpur, Generative AI course, AI consulting, Machine Learning, LLMs, AI agents, RAG systems, AI development, agentic AI, data science, Python for AI, CrewAI, LangChain, neural networks" />
+    <meta name="author" content="ZelixAI" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href="https://zelixai.in/" />
+
+    <!-- Favicon & App Icons - Using actual logo -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Browser/Platform Colors -->
+    <meta name="theme-color" content="#192153" />
+    <meta name="msapplication-TileColor" content="#192153" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ZelixAI" />
+
+    <!-- Open Graph (Social Media) - Using actual logo -->
     <meta property="og:locale" content="en_IN" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="ZelixAI" />
-    <meta property="og:title" content="ZelixAI | AI Training, AI Consulting & AI Development Company" />
-    <meta property="og:description" content="ZelixAI is an AI training and consulting company based in Nagpur, helping students, professionals and enterprises build AI solutions, AI agents and GenAI applications." />
+    <meta property="og:title" content="ZelixAI | Premium AI Training & GenAI Consulting - Nagpur" />
+    <meta property="og:description" content="Master AI, GenAI, and Agentic Systems. 500+ students trained with 100% placement support. Premium mentorship from industry experts in Central India." />
     <meta property="og:url" content="https://zelixai.in/" />
-    <meta property="og:image" content="https://zelixai.in/zelixlogo.jpg" />
-    <meta property="og:image:alt" content="ZelixAI logo" />
+    <meta property="og:site_name" content="ZelixAI" />
+    <meta property="og:image" content="https://zelixai.in/1.jpg" />
+    <meta property="og:image:secure_url" content="https://zelixai.in/1.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ZelixAI - Premium AI Training Company" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ZelixAI" />
     <meta name="twitter:creator" content="@ZelixAI" />
-    <meta name="twitter:title" content="ZelixAI | AI Training, AI Consulting & AI Development Company" />
-    <meta name="twitter:description" content="ZelixAI is an AI training and consulting company based in Nagpur, helping students, professionals and enterprises build AI solutions, AI agents and GenAI applications." />
-    <meta name="twitter:image" content="https://zelixai.in/zelixlogo.jpg" />
+    <meta name="twitter:title" content="ZelixAI | Premium AI Training & GenAI Consulting" />
+    <meta name="twitter:description" content="Master Generative AI, RAG, and Agentic Systems with premium training from industry experts in Nagpur." />
+    <meta name="twitter:image" content="https://zelixai.in/1.jpg" />
+    <meta name="twitter:image:alt" content="ZelixAI Logo" />
 
+    <!-- Geo Tags -->
+    <meta name="geo.placename" content="Nagpur, Maharashtra, India" />
+    <meta name="geo.position" content="21.1458;79.0882" />
+    <meta name="ICBM" content="21.1458,79.0882" />
+
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" as="style" href="/src/index.css" />
+
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ZelixAI",
-        "url": "https://zelixai.in/",
-        "logo": "https://zelixai.in/zelixlogo.jpg",
-        "sameAs": [
-          "https://www.linkedin.com/company/zelixai",
-          "https://www.instagram.com/zelixai"
-        ],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+91 98236 12171",
-            "contactType": "customer support",
-            "areaServed": "IN",
-            "availableLanguage": ["English", "Hindi"]
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://zelixai.in/#organization",
+          "name": "ZelixAI",
+          "alternateName": "Zelix AI",
+          "description": "Premium AI training and consulting company providing Generative AI, Machine Learning, and Agentic AI courses in Nagpur",
+          "url": "https://zelixai.in",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://zelixai.in/1.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "image": "https://zelixai.in/1.jpg",
+          "sameAs": [
+            "https://www.linkedin.com/company/zelixai",
+            "https://www.instagram.com/zelixai",
+            "https://www.facebook.com/zelixai"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1st Floor, Plot No. 74, Somalvada Layout",
+            "addressLocality": "Nagpur",
+            "addressRegion": "MH",
+            "postalCode": "440025",
+            "addressCountry": "IN"
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91-9168432121",
+              "contactType": "Customer Support",
+              "areaServed": "IN",
+              "availableLanguage": ["en", "hi"]
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91-7522915151",
+              "contactType": "WhatsApp Support",
+              "areaServed": "IN"
+            }
+          ],
+          "email": "hello@zelixai.in",
+          "founder": {
+            "@type": "Person",
+            "name": "Arpit Dhote",
+            "jobTitle": "Founder & Chief AI Mentor"
+          },
+          "numberOfEmployees": {
+            "@type": "QuantitativeValue",
+            "value": "5-10"
+          },
+          "foundingDate": "2024",
+          "areaServed": "IN"
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://zelixai.in/#localbusiness",
+          "name": "ZelixAI - AI Training Center Nagpur",
+          "url": "https://zelixai.in",
+          "image": "https://zelixai.in/1.jpg",
+          "description": "Premium AI and GenAI training center in Nagpur, Central India",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1st Floor, Plot No. 74, Somalvada Layout, Jai Prakash Nagar",
+            "addressLocality": "Nagpur",
+            "addressRegion": "MH",
+            "postalCode": "440025",
+            "addressCountry": "IN"
+          },
+          "telephone": "+91-9168432121",
+          "priceRange": "₹15000 - ₹100000",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 21.1458,
+            "longitude": 79.0882
           }
-        ]
-      }
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://zelixai.in/#educationalorg",
+          "name": "ZelixAI Learning Center",
+          "url": "https://zelixai.in",
+          "description": "Leading AI and ML education provider in Central India",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nagpur",
+            "addressRegion": "MH",
+            "addressCountry": "IN"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://zelixai.in"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Programs",
+              "item": "https://zelixai.in#programs-section"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Contact",
+              "item": "https://zelixai.in#contact-section"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zelixai.in/#website",
+          "url": "https://zelixai.in",
+          "name": "ZelixAI",
+          "description": "Premium AI Training & Consulting"
+        }
+      ]
+    }
     </script>
+
+    <!-- Google Analytics (Conversion Tracking) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18280937423"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18280937423');
+    </script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
